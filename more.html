@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>more events</title>
+</head>
+<body>
+    <h1 id="text">Explore more</h1>
+    <button id="events-more">Events</button>
+    <h1 id="inputget">Input text</h1>
+    <input id="text-felid" placeholder="text-field" type="text">
+    
+</body>
+<script>
+    document.getElementById('text-felid').addEventListener('focus',function( ) {
+        const p= document.createElement('p');
+        p.innerText= 'by focus';
+        document.body.appendChild(p);
+    })
+    document.getElementById('text-felid').addEventListener('blur',function( ) {
+        const p= document.createElement('p');
+        p.innerText= 'by blur';
+        document.body.appendChild(p);
+    })
+    // document.getElementById('text-felid').addEventListener('keydown',function(event) {
+    //     console.log(event.target.value);
+    //     const p= document.createElement('p');
+    //     p.innerText= 'by blur';
+    //     document.body.appendChild(p);
+    // })
+
+    //   document.getElementById('text-felid').addEventListener('keypress',function(event) {
+    //     console.log(event.target.value);
+    //     const p= document.createElement('p');
+    //     p.innerText= 'by blur';
+    //     document.body.appendChild(p);
+    // })
+    document.getElementById('text-felid').addEventListener('keyup',function(event) {
+        console.log(event.target.value);
+        const p= document.createElement('p');
+        p.innerText= 'by blur';
+        document.body.appendChild(p);
+    })
+    document.getElementById('events-more').addEventListener('mousemove',function( ) {
+       console.log('Event Triggered');
+       document.getElementById('inputget').innerText='changed by mousemove';
+
+    })
+   
+</script>
+</html>

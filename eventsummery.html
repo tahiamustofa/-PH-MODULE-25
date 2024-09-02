@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS DOM summery</title>
+</head>
+<body>
+<h1>Final DOM Event handlers</h1>
+<p id="changeInpu">input for cng text</p>
+<input id="textInput" type="text">
+<button id="updatebtn">Update</button>
+<br>
+<br>
+<h3 id="handler">DEFAULT</h3>
+<button onclick="handleOnclick()">Handle Event by add onclick function</button>
+<button id="eventcng">Add eventListenar</button>
+
+<script>
+    function handleOnclick() {
+        // console.log('button clicked');
+        const handlerStatus = document.getElementById('handler');
+        handlerStatus.innerText = 'Changed by handler Onclick by ONCLICK '
+    }
+
+    document.getElementById('eventcng').addEventListener('click',function(){
+      const handler = document.getElementById('handler');
+      handler.innerText = 'kuch bhi cng by EventListener';
+    })
+
+    document.getElementById('updatebtn').addEventListener('click',function () {
+        const textInput = document.getElementById('textInput');
+        const inputValue = textInput.value;
+
+        const changeInput = document.getElementById('changeInpu');
+        changeInput.innerText = inputValue;
+        textInput.value= '';
+    })
+</script>
+    
+</body>
+</html>

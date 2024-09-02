@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=h1, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Please add your comment</h1>
+    <div id="comntBox">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae consectetur modi autem tempora, inventore
+            saepe repellat est unde, nam quis harum deserunt vitae pariatur aspernatur numquam, fugiat perspiciatis sit.
+            Esse ipsa repudiandae voluptatem numquam, obcaecati, labore sapiente sequi architecto minus nisi libero
+            laudantium ducimus nulla ut minima excepturi expedita quidem?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae consectetur modi autem tempora, inventore
+            saepe repellat est unde, nam quis harum deserunt vitae pariatur aspernatur numquam, fugiat perspiciatis sit.
+            Esse ipsa repudiandae voluptatem numquam, obcaecati, labore sapiente sequi architecto minus nisi libero
+            laudantium ducimus nulla ut minima excepturi expedita quidem?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae consectetur modi autem tempora, inventore
+            saepe repellat est unde, nam quis harum deserunt vitae pariatur aspernatur numquam, fugiat perspiciatis sit.
+            Esse ipsa repudiandae voluptatem numquam, obcaecati, labore sapiente sequi architecto minus nisi libero
+            laudantium ducimus nulla ut minima excepturi expedita quidem?</p>
+    </div>
+    <div>
+        
+        <textarea name="" id="text-writeCmnt" cols="50" rows="13"></textarea>
+        <br>
+        <button id="btnpost">Post</button>
+    </div>
+</body>
+<script>
+    document.getElementById('btnpost').addEventListener('click',function( ) {
+    //   step-2  
+   const textWriteCmnt= document.getElementById('text-writeCmnt');
+   const getValue = textWriteCmnt.value;
+
+//    step-3
+const comntBox = document.getElementById('comntBox');
+
+const p = document.createElement('p');
+p.innerText = getValue;
+
+comntBox.appendChild(p);
+
+textWriteCmnt.value='';
+    })
+</script>
+
+</html>

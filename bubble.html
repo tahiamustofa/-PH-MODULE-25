@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=h1, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    li{
+        border: 2px solid yellow;
+    }
+
+    ul{
+        border: 2px solid pink;
+    }
+    body{
+        border: 2px solid rgb(192, 255, 3);
+    }
+    section{
+        border: 2px solid purple;
+    }
+</style>
+<body id="body">
+    <h1>Exploring event bubble</h1>
+    <section id="conatiner-section">
+        <ul id="listUl">
+            <li id="item-1">Lorem, ipsum.</li>
+            <li id="item-2">Voluptatibus, reiciendis.</li>
+            <li id="item-3">Expedita, dolor!</li>
+            <li id="item-4">Quibusdam, natus!</li>
+            <li id="item-5">Incidunt, vero?</li>
+            <li id="item-6">Ratione, accusamus!</li>
+        </ul>
+    </section>
+</body>
+<script>
+    document.getElementById('item-2').addEventListener('click',function (event) {
+        console.log('item2 clicked');
+        // event.stopPropagation();
+        event.stopImmediatePropagation();
+    })
+    document.getElementById('item-2').addEventListener('click',function (event) {
+        console.log('item  by one clicked');
+        // event.stopPropagation();
+    })
+    document.getElementById('item-2').addEventListener('click',function (event) {
+        console.log('item2 clicked by 3');
+        // event.stopPropagation();
+    })
+    document.getElementById('listUl').addEventListener('click',function( ) {
+        console.log('ul clicked'); 
+    })
+    document.getElementById('conatiner-section').addEventListener('click',function () {
+        console.log('section clicked');   
+    })
+    document.getElementById('body').addEventListener('click',function () {
+        console.log('body clicked');   
+    })
+</script>
+</html>
